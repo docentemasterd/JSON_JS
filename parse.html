@@ -22,15 +22,18 @@
     document.getElementById("datos3").value = json.address.streetAddress;
     document.getElementById("datos4").value = json.address.city;
 
-	alert(json["name"]); 
-	alert(json.name); 
+	alert(json["name"]); // Estos dos alert
+	alert(json.name);   // mostrarán el mismo contenido
 
 	alert(json.address.streetAddress);
-    alert(json.address.city) 
-	alert(json["address"].city); 
+    alert(json.address.city)  // Estos dos alert
+	alert(json["address"].city);  // mostrarán el mismo contenido
 
-	alert(json.phoneNumber[0].number); 
-	alert(json.phoneNumber[1].type); 
+	alert(json.phoneNumber[0].type); 
+    alert(json.phoneNumber[0].number); 
+	
+    alert(json.phoneNumber[1].type); 
+	alert(json.phoneNumber[1].number); 
 
 	alert(json.phoneNumber.number); 
 </script>
