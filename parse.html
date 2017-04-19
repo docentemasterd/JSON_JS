@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Parse JSON</title>
+</head>
+<body>
+    Nombre: <input type="text" id="datos1" size="6" disabled /> <br/>
+    Edad: <input type="text" id="datos2" size="2" disabled /> <br/>
+    Dirección: <input type="text" id="datos3" size="30" disabled /> <br/>
+    Ciudad: <input type="text" id="datos4" size="8" disabled /> <br/>
+   
+    <script>
+       var data = '{"name": "Alfredo","age": 38,"address": {"streetAddress": "Avda. Manuel Rodríguez Ayuso, 158 ","city": "Zaragoza"},"phoneNumber": [{"type": "Trabajo","number": "976764080"},{"type": "Extensión","number": "4019"}]}';
+
+	var json = JSON.parse(data);
+
+    document.getElementById("datos1").value = json.name;
+    document.getElementById("datos2").value = json.age;
+    document.getElementById("datos3").value = json.address.streetAddress;
+    document.getElementById("datos4").value = json.address.city;
+
+	alert(json["name"]); 
+	alert(json.name); 
+
+	alert(json.address.streetAddress);
+    alert(json.address.city) 
+	alert(json["address"].city); 
+
+	alert(json.phoneNumber[0].number); 
+	alert(json.phoneNumber[1].type); 
+
+	alert(json.phoneNumber.number); 
+</script>
+
+</body>
+</html>
